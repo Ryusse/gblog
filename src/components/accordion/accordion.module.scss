@@ -1,0 +1,35 @@
+.accordion {
+  @apply relative mb-3;
+
+  .button {
+    @apply relative p-4 transition-all w-full flex rounded-t-md text-left font-semibold ease-in;
+
+    .plus {
+      @apply absolute right-0 pt-1 text-xs;
+    }
+
+    .minus {
+      @apply absolute right-0 pt-1 text-xs opacity-0;
+    }
+
+    &[open] .plus {
+      @apply opacity-0;
+    }
+
+    &[open] .minus {
+      @apply opacity-100;
+    }
+  }
+
+  .content {
+    @apply h-0 overflow-hidden transition-all duration-300 ease-in-out;
+
+    .contentText {
+      @apply p-4 text-sm leading-normal text-blue-gray-500/80;
+    }
+  }
+
+  &.disabled {
+    @apply pointer-events-none relative block w-full opacity-50;
+  }
+}

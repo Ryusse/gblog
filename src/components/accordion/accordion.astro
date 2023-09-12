@@ -1,0 +1,31 @@
+---
+import { twMerge } from "tailwind-merge";
+import styles from "./accordion.module.scss";
+import { TAccordion } from "@/models/globals";
+
+interface Props {
+  list: TAccordion[];
+}
+
+const { list } = Astro.props;
+---
+
+{
+  list &&
+    list.map((item: TAccordion, index: number) => (
+      <div class={styles.accordion}>
+        <h6 class={twMerge("mb-0", item?.disabled ? `${styles.disabled}` : "")}>
+          <button class={styles.button} data-collapse-target={`${item?.dataCollapse}-${index}`}>
+            <span>{item?.label}</span>
+            <i class={`fa fa-plus ${styles.plus}`} />
+            <i class={`fa fa-minus ${styles.minus}`} />
+          </button>
+        </h6>
+        <div data-collapse={`${item?.dataCollapse}-${index}`} class={styles.content}>
+          <div class={styles.contentText}>{item?.content}</div>
+        </div>
+      </div>
+    ))
+}
+
+<script src="@modules/@material-tailwind/html/scripts/collapse.js"></script>

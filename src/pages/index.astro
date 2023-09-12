@@ -1,0 +1,38 @@
+---
+import Accordion from "../components/accordion/accordion.astro";
+import LayoutDefault from "@/layouts/layout-default.astro";
+import { TAccordion } from "@/models/globals";
+
+const listAccordion: TAccordion[] = [
+  {
+    label: "what is materialt ailwind",
+    dataCollapse: "home-init",
+    content:
+      "We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams.",
+  },
+  {
+    label: "what is materialt ailwind",
+    dataCollapse: "home-init",
+    content:
+      "We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams.",
+  },
+  {
+    label: "what is materialt ailwind",
+    dataCollapse: "home-init",
+    content:
+      "We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams.",
+  },
+  {
+    label: "what is materialt ailwind",
+    dataCollapse: "home-init",
+    content:
+      "We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams.",
+  },
+];
+---
+
+<LayoutDefault title="Welcome to Astro.">
+  <div class="h-screen p-20">
+    <div class="max-w-[500px]"><Accordion list={listAccordion} /></div>
+  </div>
+</LayoutDefault>
